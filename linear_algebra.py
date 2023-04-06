@@ -23,5 +23,25 @@ X = torch.arange(24).reshape(2,3,4)     #3D matrix
 
 A = torch.arange(20, dtype=torch.float32).reshape(5,4)
 B = A.clone()   #Allocate a new memory for B
-print(A, A+B)   
+#print(A, A+B)   
 
+x = torch.arange(4, dtype=torch.float32) #Calculate the sum of elements
+#print(x,x.sum()) 
+
+#A = torch.arange(20*2, dtype=torch.float32).reshape(2,5,4)
+#print(A.shape,A.sum())
+
+print(A.mean())
+y = torch.tensor([1.,1,1,1])
+#print(x,y,torch.dot(x,y)) #dot multiply
+
+print(torch.mv(A,x)) 
+
+B = torch.ones(4,3)
+print(torch.mm(A, B))
+
+u = torch.tensor([3., -4])  #Norm
+print(torch.norm(u))
+print(torch.abs(u).sum())   #L1Norm
+
+print("The frobenius norm is: {}".format(torch.norm(torch.ones(4,9))))
